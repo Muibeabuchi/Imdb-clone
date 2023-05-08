@@ -12,7 +12,7 @@ export default function MovieCard({results}) {
     <div className="sm:shadow-md border-b-2 border-amber-400 sm:hover:shadow-slate-400 mb-4 sm:mb-0  sm:p-3 cursor-pointer rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200
     group">
         <Link href={`movies/${results.id}`}>
-            <div className="w-full h-[300px]">
+            <div className="w-full h-[200px]">
             <Image src={results?.backdrop_path ? `${imageUrl}${results?.backdrop_path || results?.poster_path  }` : Placeholder} alt="movie image poster" 
             height={300}
             width={500}

@@ -1,3 +1,4 @@
+import NoItem from "@/components/NoItem";
 import Results from "@/components/Results";
 
 
@@ -18,7 +19,11 @@ export default async function SearchPage({params}) {
     // console.log(searchParams);
   return (
     <div className="mx-auto max-w-6xl p-4 mt-3">
+      {results ? (
         <Results results={results}/>
+      ):(
+        <NoItem />
+      )}
     </div>
   )
 }
