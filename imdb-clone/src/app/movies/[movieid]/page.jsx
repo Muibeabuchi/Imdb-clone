@@ -13,9 +13,9 @@ async function getMovie(movieId){
 }
 
 
-export default async function MoviesPage(params) {
+export default async function MoviesPage({params}) {
 
-    const movieId = params.params.movieid;
+    const movieId = params.movieid;
     const movies = await getMovie(movieId);
     const imageUrl = 'https://image.tmdb.org/t/p/original/'
 

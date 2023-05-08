@@ -18,6 +18,8 @@ export default async function Home({searchParams}) {
   // console.log(data)
 
   return (
-   <Results results={results}/>
+    <div className="">
+      <Results results={results}/>
+    </div>
   )
 }
