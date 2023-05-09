@@ -1,11 +1,17 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import {BiLike} from 'react-icons/bi';
 import Placeholder from '../assets/imdb-placeholder.png';
+import { useFavorites } from "@/store";
+import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 
 
 export default function MovieCard({results}) {
+    const fav = useFavorites(state=>state?.favorites);
+    const hasFav = fav.find(item=>item.id === results.id);
 
     const imageUrl = 'https://image.tmdb.org/t/p/original/'
   return (
@@ -28,7 +34,8 @@ export default function MovieCard({results}) {
                 <div className="flex items-center mt-1 space-x-5">
                     <p className="  ">{results?.release_date || 'No Date' }</p>
                     <p className="flex items-center"><span><BiLike className="mr-3"/></span> {(results?.vote_count).toLocaleString()}</p>
-                </div>
+                    <span className="ml-4 block">{hasFav && (<AiFillStar className='h-10 text-amber-600 text-2xl' />)}</span>                </div>
+
             </div>
 
         </Link>

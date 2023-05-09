@@ -1,3 +1,4 @@
+import FavoriteButton from "@/components/FavoriteButton";
 import Image from "next/image";
 
 const TMDB_API_KEY = process.env.TMDB_API_KEY;
@@ -17,6 +18,7 @@ export default async function MoviesPage({params}) {
 
     const movieId = params.movieid;
     const movies = await getMovie(movieId);
+    // console.log(movies)
     const imageUrl = 'https://image.tmdb.org/t/p/original/'
 
    
@@ -36,6 +38,9 @@ export default async function MoviesPage({params}) {
                 <p className="mb-3 font-semibold mr-1 "><span className="text-amber-500">Date Released: </span>{movies?.release_date || movies?.first_air_date}</p>
                 <p className="mb-3 font-semibold mr-1 "><span className="text-amber-500">Rating: </span>{movies?.vote_average}</p>
                 
+                <div className="">
+                  <FavoriteButton favorite={movies} />
+                </div>
             </div>
     </div>
   )
