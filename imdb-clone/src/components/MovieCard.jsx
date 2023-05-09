@@ -23,7 +23,7 @@ export default function MovieCard({results}) {
                 <p className="line-clamp-3">{results.overview}</p>
                 <h2 className="text-lg truncate font-bold mt-1">{results?.title || results?.original_title|| 'Title not available'}</h2>
                 <div className="flex items-center mt-1 space-x-5">
-                    <p className="">{results?.release_date || 'No Date' }</p>
+                    <p className="  ">{results?.release_date || 'No Date' }</p>
                     <p className="flex items-center"><span><BiLike className="mr-3"/></span> {(results?.vote_count).toLocaleString()}</p>
                 </div>
             </div>
